@@ -10,7 +10,7 @@
               <tr>
                   <th scope="col">#</th>
                   <th scope="col">PRODUCTO</th>
-                  
+                  <th scope="col">PRECIO</th>
                   
                   
                   
@@ -21,7 +21,11 @@
                   <td scope="row">{{i+1}}</td>
                   <ng-container *ngFor="let producto of products">
                     <td *ngIf="product.idproduct === producto.id; else menor">{{producto.nombre}}</td>  
-                    
+                  </ng-container>
+
+                  <ng-container *ngFor="let producto of products">
+                    <td *ngIf="product.idproduct === producto.id; else menor">${{producto.precio}}</td> 
+                    <td *ngIf="product.idproduct === producto.id; else menor">${{operacion(producto.precio)}}</td> 
                   </ng-container>
                   
 
@@ -34,11 +38,11 @@
       </table>
       <td> 
         
-        
     </td>
   </div>
 </div>
-<app-valiventa></app-valiventa>
+
+<app-valiventa ></app-valiventa>
 
 
 
